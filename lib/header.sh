@@ -118,8 +118,8 @@ then
   then
     echo "Warning: there is a more recent savefile"
     echo "You can"
-    echo "  (1) keep the given file ("$GSH_EXEC_FILE")"
-    echo "  (2) switch to the last savefile ($(basename "$LAST_SAVEFILE"))"
+    echo "  (1) restart the game from scratch"
+    echo "  (2) continue the game from where you left"
     echo "  (3) abort"
     echo
     R=""
