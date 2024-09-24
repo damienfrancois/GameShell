@@ -1,0 +1,28 @@
+Mission goal
+============
+
+Slurm's accounting stores a lot of information about your job
+
+The goal of the mission is to use the sacct command to retrieve information about your job and compare resource request and usage, with respect to CPU, memory and also time.
+
+Useful information
+==================
+
+sacct - query accounting database. This command has a `--format` parameter to choose which columns to display. Useful columns include:
+
+ReqMem: Requested memory 
+MaxRSS: Actually-used memory 
+Timelimit: Requested time limit
+Elapsed: Actual time used by the job
+AllocCPUS: number of CPUs allocated to the job
+CPUTime: amount of CPU hours allocated to job
+TotalCPU: amount of CPUtime actually consumed
+
+For instance: 
+
+sacct --format jobid,state,ReqMem,MaxRSS,Timelimit,Elapsed,AllocCPUS,CPUTime,TotalCPU
+
+Remarks
+-------
+
+By default, sacct only shows your jobs for the current day. Options exist to show more jobs.

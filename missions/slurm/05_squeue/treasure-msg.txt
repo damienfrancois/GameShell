@@ -1,0 +1,1 @@
+You have earned an alias (a shortcut) for "squeue --me". From now on, you can simply type "sq".
