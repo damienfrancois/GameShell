@@ -9,3 +9,6 @@
 09_submit
 10_check_output
 11_sacct
+12_killed
+13_sprio
+14_scancel

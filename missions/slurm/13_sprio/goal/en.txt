@@ -1,0 +1,19 @@
+Mission goal
+============
+
+The order in which the jobs are handled by Slurm depends on their priority. The priority is computed from multiple factors, which can be discovered with sprio.
+
+The goal of the mission is to find out the weight of fairshare in the priority computations on this cluster. Once you know the number, run gsh check and answer the question.
+
+
+Useful commands
+===============
+
+sprio -w
+  lists the weights of each term in the computation of the priority
+  
+
+Remarks
+-------
+
+If no number is shown in a column, it means that term is not included in the computation.

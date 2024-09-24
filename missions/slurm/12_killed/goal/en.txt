@@ -1,0 +1,20 @@
+Mission goal
+============
+
+Slurm will kill jobs that over use resources or fail to end withing the time limit. 
+
+The goal of the mission is to submit a job that uses more memory than requested and consequently get it killed.
+
+To that end, create a submission script that will request 1M of RAM and will use up 1G of memory. Submit then the script and wait until the job has finished. The mission will be successful if the STATE of the latest of your jobs is OUT_OF_MEMORY.
+
+Useful information
+==================
+
+In Bash, you can create a variable holding 1 gigabyte of data with the command
+
+printf -v x %1000000000s;
+
+Remarks
+-------
+
+1M per core is the minimum that can be requested.
