@@ -1,6 +1,6 @@
 #!/usr/bin/env bash -x
 
-S=$(sacct -o STATE%-15 | grep -v extern | tail -1)
+S=$(sacct -o STATE%-15 | tail -1)
 
 if [[ $S == *OUT_OF_MEMORY* ]] ; then 
     true
