@@ -3,7 +3,7 @@ Mission goal
 
 If you realise that one of your jobs behaves incorrectly, you should cancel it and re-submit a corrected version. Cancelling is done with the scancel command. 
 
-The goal of the missions if to attempt cancelling the job of another user. That will increase the changes that Slurm finds resources for your jobs. When you've run scancel on another user's job, run the gsh check command and answer the question.
+The goal of the missions is to attempt cancelling the job of another user. That will increase the changes that Slurm finds resources for your jobs. When you've run scancel on another user's job, run the gsh check command and answer the question.
 
 Useful commands
 ===============
