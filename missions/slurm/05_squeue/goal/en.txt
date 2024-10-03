@@ -3,7 +3,7 @@ Mission goal
 
 Find out about the list of jobs currently managed by Slurm. Jobs are identified by a numerical job ID. Some of them are currently being worked on by the workers, they are in the R (Running) state. The others are in the PD (PenDing) state. Jobs can be given names to better recognize them. The jobs that will start next are the one that have "(Resources)" as listed "reason".
 
-What is the job ID of the next job to start in the default partiton?
+What is the job ID of the next job to start in the default partition?
 
 Useful commands
 ===============

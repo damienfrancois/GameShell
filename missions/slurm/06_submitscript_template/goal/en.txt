@@ -17,6 +17,9 @@ Useful commands
 vim, nano
     Both Vim and Nano are text editor that allow creating files in a terminal with a pure text interface. Learning about them is out of the scope of this tutorial.
 
+mkdir
+    create a directory
+
 Remarks
 -------
 

@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-Although an empty submission script is technically a valid submission script is most cases, it is not useful as is. There are two main section that are needed in the submission script.
+Although an empty submission script is technically a valid submission script is most cases, it is not useful as is. There are two main sections that are needed in the submission script.
 
 The first one is the description of the resources that your job will require. The most important resources to specify are
 
@@ -18,7 +18,7 @@ Exemple:
 
 There are unfortunately no magic solution to find out the correct amount of resources and duration for a given job as it will depend on many factors. Only experience will tell you what amount of resource to request for a given job.
 
-To fullfill this mission, insert in the submission script the three require lines to specify that the job should run for 10 minutes using 4 CPUs and 1000MB of RAM per CPU.
+To fullfill this mission, insert in the submission script the three required lines to specify that the job should run for 10 minutes using 4 CPUs and 1000MB of RAM per CPU.
 
 Useful parameters
 =================

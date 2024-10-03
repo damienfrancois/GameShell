@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-The Slurm command all start with the letter s. To better learn how to use them, it is useful to read their manual page (or man page for short). Although the man pages are available on the web it is safer to refer to the manpage that are installed locally to make sure you are reading the correct version with respect to the version of Slurm that you are interacting with.
+The Slurm commands all start with the letter s. To better learn how to use them, it is useful to read their manual page (or man page for short). Although the man pages are available on the web it is safer to refer to the manpage that are installed locally to make sure you are reading the correct version with respect to the version of Slurm that you are interacting with.
 
 The goal of the mission is to consult the manpage of sinfo and wander through it. Then, at your convenience, quit the manpage.
 
