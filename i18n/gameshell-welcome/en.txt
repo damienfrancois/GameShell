@@ -3,7 +3,7 @@ Welcome to GameSlurm!
 After your fascinating adventures in the command
 line where you explored a castle in a forest and
 met with wise and weird people, you realise that
-the castle emplyes a set of worker gnomes hosted
+the castle employs a set of worker gnomes hosted
 in the stable.
 
 They obey to their master Slurm the Great, or
