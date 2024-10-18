@@ -2,7 +2,7 @@
 
 KO=0
 
-if ! grep -- "--time[= ]\(0-\)\?10:00\(:00\)\?" $GSH_HOME/testjob/submit.sh &>/dev/null
+if ! grep -- "--time[= ](0-)?(00:)?10:00"" $GSH_HOME/testjob/submit.sh &>/dev/null
 then
     echo "The time specification is not correct."
     KO=1
