@@ -1,0 +1,39 @@
+Mission goal
+============
+
+The files have a specific structure. They look like this:
+
+    # Result file for experiment
+    [main]
+
+    parameter=0.01
+    result=0.15492
+
+    [meta]
+    time=531244
+
+This structure is called an "INI" file. It corresponds to a well-known standard with "sections" between square brackets and key-values pairs delimited by an = sign.
+
+In all languages, this type of file can read and parsed directly using an existing package/module/extension.
+
+To pass this mission, you will need to find out which extension of the language you chose offers that functionality, and create a small script that simply reads the first file (exercice2/res-1.txt) and outputs the value of "result".
+
+Then run that script and use a pipe | to pass the output to gsh check
+
+Read the documentation of the extension, and take advantage of the interactive interpreter to try and test the extention before you write the solution script.
+
+Useful commands
+===============
+
+For Python and R, the extention is probably already included. 
+
+See section 4 in the slides of the lecture for hints on how to install additional extensions.
+
+For Octave, you will have to download a file and save it in the same directory.
+For Julia, you will have to install the extension using the appropriate commands.
+
+Remarks
+-------
+
+Once the extention is installed, you might need to 'activate it' using a keyword, like "import", "library", "using", etc.
+

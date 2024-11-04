@@ -1,0 +1,12 @@
+Mission goal
+============
+
+We want to read all files and store the values in two distinct arrays of size 99. To pass the mission, write a script that reads all files in exercices2/, stores each value for "parameter" and "result" in two arrays, and outputs the contents of array "values".
+
+Use the pipe | to pass the output of your script to gsh check.
+
+Remarks
+=======
+
+Do not worry about the formatting of the array that is output on the screen.
+

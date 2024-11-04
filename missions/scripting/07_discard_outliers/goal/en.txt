@@ -1,0 +1,22 @@
+Mission goal
+============
+
+If you look closer at the contents of the results, you notice that the minimum value is negative. But based on the experiment, this should not be. There are actually multiple "outliers" in the results, values that should not be taken into account to look for the minimum. 
+
+The goal of the mission is to detect those outliers and find the actual minimum. Outliers will be defined here as values that are very different from their neighboring values. Update your script so that the outliers are ignored and it outputs the actual (positive) minimum.
+
+Feed then the output of your script to gsh check.
+
+Useful commands
+===============
+
+Refer to slide 17 and 18 of the training session. 
+
+The "diff" command exists in Python, R, Julia and Octave, and gives a vector with all differences between successive items in an array. It can be emulated using slicing by element-wise subtracting of the vector from position 1 to end minus one element, and from position 2 to the end.
+
+Remarks
+-------
+
+In a single line of code, you should be able to replace all outliers with NaN values so that they are ignored by the function looking for the minimum value.
+
+You can also target all negative values in the array as an intermediate step towards the solution. This will give the correct answer as well.

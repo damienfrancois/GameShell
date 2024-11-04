@@ -1,20 +1,17 @@
 Welcome to GameShell!
 
-Using and administering a computer running a Unix-like operating 
-system (e.g., Linux, BSD or macOS) requires using a command line 
-interface called "shell". In this game you will learn how to use 
-the shell by journeying through various missions that will teach 
-you to perform standard tasks such as:
-  - creating directories,
-  - creating, viewing and editing files,
-  - searching for files satisfying certain criteria,
-  - running and interrupting programs,
-  - etc.
+Discovering a programming language is best 
+done with a small exercice. This gameshell
+will guide you through the challenge offered
+during the training session dedicated to 
+scripting languages. 
 
-During your adventure you will need to visit locations, interact 
-with people, and find various objects. However, you have to keep 
-in mind that these are standard directories, programs, and files 
-(often with random contents). So, for example:
-  - "build a hut" means creating a directory called "Hut", and
-  - "put a coin in your chest" means moving a file called "coin" 
-    to a directory called "Chest".
+The goal is to read multiple files that have a
+specific internal structure and find the
+minimum number among a set of values. 
+
+Beware that outliers and NaNs will try
+to make you fail in your quest!
+
+You are free to choose the scripting language
+that you want to discover.

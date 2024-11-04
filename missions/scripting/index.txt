@@ -1,0 +1,7 @@
+01_load_module
+02_copy_files
+03_read_one_file
+04_generate_file_list
+05_read_all_files
+06_find_minimum
+07_discard_outliers

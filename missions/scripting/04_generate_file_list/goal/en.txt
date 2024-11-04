@@ -1,0 +1,23 @@
+Mission goal
+============
+
+You now have a partial solution where you are able to read a file and reads its contents.
+
+You will have to read all files to find the miniumum value. To do that, the first step is to generate the list of all files. This can be done either by discovering the files that are present in the directory, or, since you know already their names, you can generate that list using string formating features of the language.
+
+The goal of the mission is to write a small script that generates, using a for-loop, all the names of the files that must be read from the exercice2 directory.
+
+Then run that script and use a pipe | to pass the output to gsh check
+
+Useful commands
+===============
+
+Refer to slides 20 and 22 of the training session.
+
+As a reminder, the ls command can help you if you do not remember the full list of filenames.
+
+
+Remarks
+-------
+
+Another approach would have been to discover the list using what is known as "globbing" in most languages. Feel free to write another version of the script that lists the contents of the exercice2 directory rather than build it.

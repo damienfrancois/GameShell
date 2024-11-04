@@ -1,0 +1,16 @@
+Mission goal
+============
+
+We want to read all files and store the values in two distinct arrays of size 99. Then, we will be able to use the language features to find the minimum of the array 'values' and find out the corresponding value for 'parameter'.
+
+Note that some files contain invalid values, that will be stored by the interpreter as special numbers such as "NotANumber" or Nan. You will have to make sure the command you use to find the minimum properly handles those values.
+
+To pass the mission, write a script that reads all files in exercices2/, stores each value for "parameter" and "result" in two arrays, and find the minimum of the "result" array. The script should only output that minimum value.
+
+
+Useful commands
+===============
+
+In R, Python and Octave, the "min" command finds the minimum of an array. In Julia, it is called "findmin". Lookup their respective documentation to find out how to use them.
+
+

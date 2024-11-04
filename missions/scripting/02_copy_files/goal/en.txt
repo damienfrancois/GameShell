@@ -1,0 +1,14 @@
+Mission goal
+============
+
+For this game, we will assume that you have submitted a job array of 99 jobs, that each computed some result value based on some parameter value. Each job has generated a single file with those two numbers. The goal of this mission is to copy the files from the location where your job generated them.
+
+Copy the directory /CECI/proj/training/scripting/exercice2 in your home directory.
+
+
+Useful commands
+===============
+
+cp -r SRC .
+  Copy the SRC directory in the current directory.
+

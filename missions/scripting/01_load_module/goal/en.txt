@@ -1,0 +1,21 @@
+Mission goal
+============
+
+Choose a scripting language (Octave, Python, R or Julia) and find and load the corresponding module.
+
+Useful commands
+===============
+
+module load MODULE
+  Loads module named MODULE in the environment.
+  If you do not know what a module is, please refer to the documentation or the dedicated training session.
+
+module spider MODULE
+  Looks for a module named MODULE.
+
+Remarks
+-------
+
+Beware that modules often have capital letters as their initial letter while the corresponding command might be all lower-case.
+
+As far as the Python module is concerned, it is best to load the SciPy-bundle module, that contains already a set of packages dedicated to scientific computing.
