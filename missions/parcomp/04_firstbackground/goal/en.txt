@@ -1,0 +1,32 @@
+Mission goal
+============
+
+For the whole duration of the execution of the `lower.sh` script, the terminal
+was dedicated to the run, and you were not able to write any command until the
+script finished.
+
+In such cases, the script is said to be running "in the foreground".
+
+Bash also allows running scripts "in the background". In that case, you will be
+able to run other commands immediatly, as the scripts executes behind the scenes.
+
+This is done by terminating the command with the ampersand sign '&'. Note that in
+that case, the terminal will be garbled with the output of the script.
+
+To fulfull in the mission, run the same command as before, but this time in the background.
+Check that you can run commands during the execution by running for instance `echo Hello`.
+
+When the script has finished, Bash will output a message the next time you hit enter. Note this
+message and run `gsh check` to pass the mission.
+
+Useful commands
+===============
+
+COMMAND &
+  runs COMMAND in the background.
+
+Remarks
+-------
+
+The & symbol is actually a command *separator*; you can run multiple commands in the
+same line, separated by &.

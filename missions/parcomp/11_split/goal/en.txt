@@ -1,0 +1,39 @@
+Mission goal
+============
+
+Until now, we have considered either multiple files or multiple
+commands. But sometimes, we will want to process a single
+file faster. Linux offers the `split` command that was 
+originally written to split large files into multiple smaller
+ones, but this command can actually run programs on each part,
+called "filters" rather than saving them to files.
+
+The goal of this mission is to speed up the processing of
+file `d.txt` by `./upper.sh` using the `split` command and its
+`--filter` argument.
+
+Here again, use the `time` command to measure how long it
+takes.
+
+Useful commands
+===============
+
+split --number XX --filter COMMAND FILE
+  with these arguments, `split` will split FILE into XX pieces
+  and feed each as standard input to COMMAND
+  
+Remarks
+-------
+
+The `split` command will bufferize the outputs for the sake
+of performance, but for small test cases, you should deactivate
+it in order to be able to percieve the difference with the case
+where the script is called on the whole file.
+
+The --number accepts a specific notation to denote round-robin
+distribution of the lines to the scripts, which you should use here:
+--number r/4 so that four instances of `lower.sh` are started, 
+and fed each line of the `d.txt` file.
+
+Here, as in the previous mission, the input will be fed through 
+stdin, so the output must be redirected explicitly to a file.

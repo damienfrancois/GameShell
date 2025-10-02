@@ -1,0 +1,26 @@
+Mission goal
+============
+
+This time, rather than estimating the time it takes to run the script,
+we will use the `time` command to get an actual time measurement.
+
+Tp pass the mission, run `gsh check` and answer the question.
+
+Useful commands
+===============
+
+time COMMAND
+  measures the time taken to run COMMAND
+
+Remarks
+-------
+
+The time command will output three measurments:
+- real: Elapsed real time (in [hours:]minutes:seconds).
+- user: CPU time actually consumed by the command
+- sys: CPU time spent by the operating system to run the command
+
+The `user` part will be lower than `elapsed` if the command has
+spent some time waiting or sleep, and will be greater than `elapsed`
+if it used multiple CPUs at the same time. The `sys` part refers to
+operations performed in `kernel mode` such as malloc or fread/fwrite.

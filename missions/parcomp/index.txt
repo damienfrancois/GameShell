@@ -1,0 +1,12 @@
+01_copysample
+02_firsttiming
+03_firstactualtiming
+04_firstbackground
+05_backgroundparallel
+06_xargsserial
+07_xargsparallel
+08_nopipes
+09_fifo
+10_pipe
+11_split
+12_make

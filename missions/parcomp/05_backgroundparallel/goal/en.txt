@@ -1,0 +1,41 @@
+Mission goal
+============
+
+Now is the time to run two instances of the script at the same time.
+
+In order to run two instances of the script in the background and not
+have the output all mixed up, we will use the script with a second
+argument so that it writes its output in a file rather than directly
+on screen.
+
+For the sake of the test, we will run the two instances on two different
+files. Therefore, one command will be
+
+    ./lower.sh d1.txt res1.txt &
+
+and the other
+
+    ./lower.sh d2.txt res2.txt &
+
+As a result, two files res1.txt and res2.txt will be created.
+
+To pass the mission, start both commands at the same time by writing them
+on the same line. 
+
+You can also try to measure the time it takes with the `time` command.
+
+Useful commands
+===============
+
+time { COMMAND1 & COMMAND1 & wait ; }
+  measures the time needed to complete both COMMAND1 and COMMAND2 in the background
+  See the remark about `wait` below. If you forget to use it, the `time`
+  command will report only the time needed to start the commands, not complete them.
+
+Remarks
+-------
+
+Sometimes, you will want to wait until all background processes have completed.
+You can do so with the `wait` command.
+
+Please note that the spaces around the curly braces are required.

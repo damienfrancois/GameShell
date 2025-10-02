@@ -1,0 +1,20 @@
+Mission goal
+============
+
+Copy the sample script in your working directory.
+
+
+Useful commands
+===============
+
+The sample scripts are in the directory `/CECI/proj/training/parcomp`
+You can copy the whole directory with the `cp` command, with the `-r`
+parameter to recusively copy its contents. Remember that the destination
+being the current directory, a dot `.` can be used as second argument.
+
+Remarks
+-------
+
+You can see the contents of the directory you copied with `ls parcomp`,
+enter that directory with `cd parcomp` and list the contents of a script
+with `cat lower.sh`.

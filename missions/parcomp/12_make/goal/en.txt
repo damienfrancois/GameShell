@@ -1,0 +1,31 @@
+Mission goal
+============
+
+For this final mission, we will look at the case where we have both
+multiple data files and multiple commands, and we suppose we have
+to use intermediate files. 
+
+This is the typical usecase for the Make command, but how to write
+a Makefile is beyond the scope of this session. There is another
+session dedicated to it.
+
+So the goal of this mission is just to run the provided makefile
+in the directory, once purely sequentially, then once using multiple
+programs in parallel, and measure the time it takes to complete.
+
+Useful commands
+===============
+
+make
+  without arguments, `make` will look for a file named `Makefile`
+  with instructions on which program to run based on which input
+  files to produce which output files. With the `-j N` argument,
+  `make` will run `N` programs in parallel when possible.
+  
+Remarks
+-------
+
+The `make` command will only re-run the commands that are needed
+to create the missing outputs. Therefore, two consecutive runs 
+of make will lead to the second one doing nothing. To force a
+full re-run, use the `-B` argument.

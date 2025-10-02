@@ -1,0 +1,35 @@
+Mission goal
+============
+
+In the previous mission, you wrote a FIFO intermediate file so that the second
+command could start withough waiting for the whole intermediate file to be
+written.
+
+Programs that can read and write from stdin and to stdout and can be chained
+together, can also work in parallel without the need for an intermediate file.
+This is the case for the two scripts upper.sh and lower.sh.
+
+To pass this mission, do the same as for the previous mission, but using
+a pipe rather than a FIFO file.
+
+Time the whole process and take note of the elpased (real) time.
+
+Useful commands
+===============
+
+time { COMMAND1 | COMMAND2 ; }
+  this will measure the time needed to run both commands in cases
+  the second command is consuming output from the first one.
+
+mkfifo FILE
+  creates a "fake" fifo file that can be writtent to and read from
+  at the same time.
+
+Remarks
+-------
+
+The upper.sh script cannot accept only an output file. If only one
+argument is given, it will interpret it as an input file. In this
+case, you then cannot give any argument as the input should be
+through stdin. Therefore, you need to use a Bash redirection `>`
+to write the output file.

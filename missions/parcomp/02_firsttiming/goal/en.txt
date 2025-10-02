@@ -1,0 +1,26 @@
+Mission goal
+============
+
+Enter the directory you copied and look at the contents of the `d.txt` file.
+Then, run the `lower.sh` script with that file as argument. How much time does
+it approximately take?
+
+When done, run `gsh check`.
+
+Useful commands
+===============
+
+cd DIRECTORY
+  changes current working directory to DIRECTORY
+cat FILE
+  shows contents FILE
+
+Remarks
+-------
+
+To run the script, you need to specify the path explicitly with `./lower.sh FILE`.
+If you forgot to given an argument, the script will wait indefinitely. In that case,
+hit CTRL-C to regain control of the terminal.
+
+By not specifying a second argument, the output will be written to the terminal.
+

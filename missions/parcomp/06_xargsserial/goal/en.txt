@@ -1,0 +1,36 @@
+Mission goal
+============
+
+The ability to start multiple commands in the background is nice, but
+it does not scale. If you have 100 files, you do not want to do that
+all by hand. Enters `xargs`.
+
+To pass the mission, build a one-line pipeline that lists the files
+in the directory that look like `d1.txt`, `d2.txt`, etc., passes the
+list to `xargs`, that, in turn, runs the command
+
+    ./lower.sh d1.txt d1.txt.res 
+
+on all files found in the directory.
+
+Useful commands
+===============
+
+The `xargs` command takes a list of values in its standard input, separated by
+newlines and a command as argument. With the proper switches, it then runs the
+command on each item in the list. 
+
+For instance, you can run the following command to see the output.
+
+    ls d?.txt | xargs -I {} echo "I found {} here! I repeat. I found {}here!"
+
+The `-I` argument denotes the place holder that can subsequently be used in the 
+command passed as argument. Any character sequence can be used, but {} is often
+customary. Note that the placeholder can be used multiple times.
+
+
+Remarks
+-------
+
+The `ls d?.txt` command will list all files in the current directory that match
+the pattern where the question mark can represent any character.

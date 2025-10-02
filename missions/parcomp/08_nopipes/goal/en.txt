@@ -1,0 +1,25 @@
+Mission goal
+============
+
+In the previous missions, you had to run the same program on multiple
+files. This mission's objective is the opposite; run multiple programs
+on a single file. In this example, we will run, in sequence, the scripts
+`./lower.sh`, then `./upper.sh` on file `d.txt`, to produce `res.txt`.
+
+To fullfill this mission, run both, using an intermediate `tmp.txt` file
+and measure the time it needs to run.
+
+Useful commands
+===============
+
+time { COMMAND1 ; COMMAND2 ; }
+  this will measure the time needed to run both commands.
+
+Remarks
+-------
+
+Beware that the space before the closing curly brace is necessary.
+
+Also, if you run the same command multiple times, the output file will
+increase in size so you should remove the tmp.txt and res.txt files
+before the final run.

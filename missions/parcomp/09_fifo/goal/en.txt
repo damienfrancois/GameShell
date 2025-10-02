@@ -1,0 +1,37 @@
+Mission goal
+============
+
+In the previous mission, you wrote an intermediate file, and the second
+command actually had to wait for this file to be written before it can 
+start.
+
+Linux actualy allows creating "fake" files that can be written to and
+read from at the same time. The command that reads is blocked until the
+command that writes has writtent a line. This way, both commands can 
+operate at the same time.
+
+To fulfil this mission, create such a file, called a 'fifo' file named
+fifo.tmp with the `mkfifo` command and use it instead of the regular
+file `tmp.txt` in the previous mission. Make sure to run the first 
+command *in the background* to allow the second one to start as soon
+as possible. 
+
+Time the whole process and take note of the elpased (real) time.
+
+Useful commands
+===============
+
+time { COMMAND1 & COMMAND2 ; }
+  this will measure the time needed to run both commands in cases
+  the second command is waiting on the first one, for instance
+  through a fifo file
+
+mkfifo FILE
+  creates a "fake" fifo file that can be writtent to and read from
+  at the same time.
+
+Remarks
+-------
+
+The fifo file will actually consume working memory (RAM) rather than
+disk space. This can be a limitation if some cases.

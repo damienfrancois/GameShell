@@ -1,0 +1,24 @@
+Mission goal
+============
+
+If you were paying attention, you might have found the time needed to run
+the command higher than previous tests. You can verify this with the `time`
+command again. 
+
+Now run the same line (including the `time`) but add `-P4` as first argument
+to `xargs` and observe the results.
+
+
+
+Useful commands
+===============
+
+The `xargs` command accepts a parameter `-P` that controls how many instances
+of the program are started at the same time. Using a values greater than one
+allows running programs in parallel in the background.
+
+Remarks
+-------
+
+The number of processes to start should not exceed the computer capabilities ;
+it should correspond at max to the number of physical CPUs on the server.
