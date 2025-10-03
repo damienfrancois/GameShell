@@ -12,7 +12,7 @@ This is the case for the two scripts upper.sh and lower.sh.
 To pass this mission, do the same as for the previous mission, but using
 a pipe rather than a FIFO file.
 
-Time the whole process and take note of the elpased (real) time.
+Time the whole process and take note of the elapsed (real) time.
 
 Useful commands
 ===============

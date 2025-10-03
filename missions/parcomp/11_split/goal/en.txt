@@ -21,14 +21,15 @@ Useful commands
 split --number XX --filter COMMAND FILE
   with these arguments, `split` will split FILE into XX pieces
   and feed each as standard input to COMMAND
-  
+
+
 Remarks
 -------
 
 The `split` command will bufferize the outputs for the sake
 of performance, but for small test cases, you should deactivate
 it in order to be able to percieve the difference with the case
-where the script is called on the whole file.
+where the script is called on the whole file. Use `--unbuffered`.
 
 The --number accepts a specific notation to denote round-robin
 distribution of the lines to the scripts, which you should use here:
