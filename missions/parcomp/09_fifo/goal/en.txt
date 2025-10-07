@@ -11,7 +11,7 @@ command that writes has writtent a line. This way, both commands can
 operate at the same time.
 
 To fulfil this mission, create such a file, called a 'fifo' file named
-fifo.tmp with the `mkfifo` command and use it instead of the regular
+`tmp.fifo` with the `mkfifo` command and use it instead of the regular
 file `tmp.txt` in the previous mission. Make sure to run the first 
 command *in the background* to allow the second one to start as soon
 as possible. 

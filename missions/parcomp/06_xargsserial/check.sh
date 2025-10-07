@@ -1,7 +1,7 @@
 #!/usr/bin/env bash -x
 
 
-if history  | grep -s -E "xargs\s-I\s\{\}\s./lower.sh\s\{\}\s\{\}.res" 
+if history  | grep -s -E "xargs\s+-I\s\{\}\s+./lower.sh\s+\{\}\s+\{\}.res" 
 then
     true
 else
