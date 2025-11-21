@@ -19,7 +19,5 @@ time COMMAND
 Remarks
 -------
 
-The -k parameter of parallel will order outputs properly based
-on the order of the inputs.
-
-
+The `--keep-order` (or `-k` in short)  parameter of parallel will order outputs
+properly based on the order of the inputs.

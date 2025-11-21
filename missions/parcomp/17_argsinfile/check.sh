@@ -10,7 +10,7 @@ else
 fi
 
 
-if [[ -f expriment.A_1.txt && -f expriment.B_2.txt && -f expriment.A_5.txt && -f expriment.C_4.txt ]]
+if [[ -f experiment.A_1.txt && -f experiment.B_2.txt && -f experiment.A_5.txt && -f experiment.C_4.txt ]]
 then
     true
 else

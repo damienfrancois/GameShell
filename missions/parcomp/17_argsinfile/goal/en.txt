@@ -12,7 +12,9 @@ Useful parameters are:
     --header ':'  -> use header in parameter names
 
 With those defined, parallel will understand placeholders
-with the name of the columns inside it.
+with the name of the columns inside it, e.g.
+
+     {ColumnA} {ColumnB}
 
 Goal of the mission: create empty files with names following
 the pattern

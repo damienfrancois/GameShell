@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
+cd $HOME
 if [ ! -d parcomp ] ; then
     echo The directory is nowere to be found!
-    exit -1
+    false
 fi

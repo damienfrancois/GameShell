@@ -7,7 +7,7 @@ GPL_v3 licence and is free to use, but the author requests
 that publications that used the software to produce the
 results cite the software in their references. 
 
-The programm will remind you this until you explicitly agree
+The program will remind you this until you explicitly agree
 to cite it in future publications, at which point it will
 become completely silent on the matter.
 
@@ -20,7 +20,7 @@ Useful commands
 parallel COMMAND ::: ARG1 ARG2 ... ARGN
   this command will start N instances of COMMAND in parallel
   and "distribute" ARG1 ARG2 ... ARGN to each instance. For 
-  instance parallel `echo ::: Hello Bonjour Holà` will run
+  instance `parallel echo ::: Hello Bonjour Holà` will run
   `echo` three times, once with `Hello`, once with `Bonjour` and
   a final time with `Holà`, all at the same time.
 

@@ -42,5 +42,5 @@ cp FROM TO
 Remarks
 -------
 
-It is often interesting to first try the command with `--dru-run` to see
+It is often interesting to first try the command with `--dry-run` to see
 what would be executed without actually executing it.

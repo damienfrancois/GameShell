@@ -1,7 +1,7 @@
 #!/usr/bin/env bash -x
 
 
-read -p "What is the 'user' duration, in seconds, of the command as reported by the time command? " D
+read -p "What is the 'real' duration, in seconds, of the command as reported by the time command? " D
 
 if [[ $D == 4* ]]
 then

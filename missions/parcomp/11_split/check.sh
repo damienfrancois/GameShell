@@ -8,6 +8,6 @@ if [[ $D == 1* ]]
 then
     true
 else
-        echo "Are you sure? The timing should be quite low."
+        echo "Are you sure? The timing should be quite low. Did you take into account the remark paragraph in the goal description?"
         false
 fi
