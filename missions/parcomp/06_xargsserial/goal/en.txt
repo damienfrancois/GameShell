@@ -22,7 +22,7 @@ command on each item in the list.
 
 For instance, you can run the following command to see the output.
 
-    ls d?.txt | xargs -I {} echo "I found {} here! I repeat. I found {}here!"
+    ls d?.txt | xargs -I {} echo "I found {} here! I repeat. I found {} here!"
 
 The `-I` argument denotes the place holder that can subsequently be used in the 
 command passed as argument. Any character sequence can be used, but {} is often

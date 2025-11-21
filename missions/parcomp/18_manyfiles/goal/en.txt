@@ -1,0 +1,25 @@
+Mission goal
+============
+
+In this mission, you will use the parallel command to do some
+of the work you did with the xargs and split commands earlier.
+
+The goal of this mission is to run ./lower.sh of all four files
+named d?.txt and redirect all outputs to a single file named res.txt
+
+In this exercise, we want the output of all parallel processes
+to be ordered correctly, i.e. not have all outputs interleaved.
+
+Useful commands
+===============
+
+time COMMAND
+  The time command will measure time taken to run COMMAND
+
+Remarks
+-------
+
+The -k parameter of parallel will order outputs properly based
+on the order of the inputs.
+
+

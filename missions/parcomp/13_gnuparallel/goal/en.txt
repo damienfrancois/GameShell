@@ -1,0 +1,24 @@
+Mission goal
+============
+
+This time, we will look at a command which is not part of the set
+of basics Linux commands. Its name is GNU Parallel and is installed
+as an environment module on the clusters. The goal of this mission
+is to find this module and load it so that the `parallel` program
+is avaiable in the command line.
+
+Useful commands
+===============
+
+module spider PROGRAM
+  this command will look for PROGRAM across all software installed
+  on the cluster. It should already be familiar to any cluster
+  user. If not, please refer to the CECI documentation, the
+  CISM/CECI Youtube Channel, or the gameshell/module game.
+
+
+Remarks
+-------
+
+The `parallel` module might not be in the default release, so make
+sure to load the correct one before loading the module.

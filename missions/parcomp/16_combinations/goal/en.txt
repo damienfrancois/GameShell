@@ -1,0 +1,46 @@
+Mission goal
+============
+
+The `parallel` command accepts multiple sets of parameters and 
+will compute all combinations. For instance
+
+    parallel echo {1} {2} ::: Hello Bonjour Holà ::: World Galaxy Universe
+
+will display 
+
+    Hello World
+    Hello Galaxy
+    Hello Universe
+    Bonjour World
+    Bonjour Galaxy
+    Bonjour Universe
+    Holà World
+    Holà Galaxy
+    Holà Universe
+
+By contrast, with the --link argument, it will only consider pairs in the matching order
+
+    Hello World
+    Bonjour Galaxy
+    Holà Universe
+
+The goal of the mission is to create a copy of each d?.txt file with 
+a specific name, in one command
+
+    d1.txt -> backup.a
+    d2.txt -> backup.b
+    d3.txt -> backup.c
+    d4.txt -> backup.d
+
+Useful commands
+===============
+
+cp FROM TO
+  the `cp` command copies a file either to another directory or
+  to the same directory with another name.
+
+Remarks
+-------
+
+It is often interesting to first try the command with `--dru-run` to see
+what would be executed without actually executing it.

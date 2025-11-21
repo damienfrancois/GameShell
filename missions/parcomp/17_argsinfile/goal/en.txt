@@ -1,0 +1,35 @@
+Mission goal
+============
+
+When pairs of arguments cannot be built implicitly,
+they can be given explicitly in a file, and referenced 
+with four colons instead of three:
+
+    parallel COMMAND :::: FILE
+
+Useful parameters are:
+    --colsep ',' -> column separators (e.g ',' in a CSV file)
+    --header ':'  -> use header in parameter names
+
+With those defined, parallel will understand placeholders
+with the name of the columns inside it.
+
+Goal of the mission: create empty files with names following
+the pattern
+
+    experiment.LETTER_NUMBER.txt
+
+where LETTER and NUMBER are given in the file experiments.csv
+present in the directory.
+
+Useful commands
+===============
+
+touch FILENAME
+  the touch command creates an empty file named FILENAME
+
+Remarks
+-------
+
+The number of parameter sets is not limited to two, it can 
+be arbitrary large, but beware of the combinatorial explosion!

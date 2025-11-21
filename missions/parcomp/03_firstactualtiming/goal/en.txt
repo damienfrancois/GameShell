@@ -21,6 +21,6 @@ The time command will output three measurments:
 - sys: CPU time spent by the operating system to run the command
 
 The `user` part will be lower than `elapsed` if the command has
-spent some time waiting or sleep, and will be greater than `elapsed`
+spent some time waiting or sleeping, and will be greater than `elapsed`
 if it used multiple CPUs at the same time. The `sys` part refers to
 operations performed in `kernel mode` such as malloc or fread/fwrite.

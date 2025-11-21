@@ -1,7 +1,7 @@
 Mission goal
 ============
 
-For this final mission, we will look at the case where we have both
+For this mission, we will look at the case where we have both
 multiple data files and multiple commands, and we suppose we have
 to use intermediate files. 
 

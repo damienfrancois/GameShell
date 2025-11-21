@@ -21,10 +21,6 @@ time { COMMAND1 | COMMAND2 ; }
   this will measure the time needed to run both commands in cases
   the second command is consuming output from the first one.
 
-mkfifo FILE
-  creates a "fake" fifo file that can be writtent to and read from
-  at the same time.
-
 Remarks
 -------
 

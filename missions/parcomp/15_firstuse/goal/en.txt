@@ -1,0 +1,38 @@
+Mission goal
+============
+
+The `parallel` recognizes the pair of characters {} as a placeholder
+for the arguments. For instance
+
+    parallel echo 'Hello {} !!' ::: World Galaxy Universe
+
+will display 
+
+    Hello World !!
+    Hello Galaxy !!
+    Hello Universe !!
+
+The placeholder can also be adapted to modify the parameter :
+- {.} refers to the parameter without anything beyond the last dot
+- {/} refers to the parameter without anything up to the last slash
+
+To fullfill this missions, create a backup copy of all `d1.txt` to 
+`d4.txt` as `d1.bak` to `d4.bak` in a single `parallel` command.
+
+
+Useful commands
+===============
+
+cp FROM TO
+  the `cp` command copies a file either to another directory or
+  to the same directory with another name.
+
+{a..d}
+  This is a Bash shortcut to denote "a b c d". It can be used in the
+  parallel arguments to generate the parameters
+
+Remarks
+-------
+
+It is often interesting to first try the command with `--dry-run` to see
+what would be executed without actually executing it.

@@ -8,8 +8,6 @@ command again.
 Now run the same line (including the `time`) but add `-P4` as first argument
 to `xargs` and observe the results.
 
-
-
 Useful commands
 ===============
 

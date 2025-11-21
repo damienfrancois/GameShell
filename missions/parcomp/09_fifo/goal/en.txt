@@ -7,10 +7,10 @@ start.
 
 Linux actualy allows creating "fake" files that can be written to and
 read from at the same time. The command that reads is blocked until the
-command that writes has writtent a line. This way, both commands can 
+command that writes has written a line. This way, both commands can 
 operate at the same time.
 
-To fulfil this mission, create such a file, called a 'fifo' file named
+To fulfill this mission, create such a file, called a 'fifo' file named
 `tmp.fifo` with the `mkfifo` command and use it instead of the regular
 file `tmp.txt` in the previous mission. Make sure to run the first 
 command *in the background* to allow the second one to start as soon

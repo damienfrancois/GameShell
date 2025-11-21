@@ -1,0 +1,32 @@
+Mission goal
+============
+
+In this mission, you will use the parallel command to do some
+of the work you did with the xargs and split commands earlier.
+
+The goal of this mission is to run ./lower.sh on all lines of the
+d.txt file in parallel, into a file named res.txt
+
+
+Useful commands
+===============
+
+time COMMAND
+  The time command will measure time taken to run COMMAND
+
+cat FILE | PROGRAM
+  Outputs the contents of FILE and feed it to the standard
+  input of PROGRAM
+
+Remarks
+-------
+
+The -k parameter of parallel will order outputs properly based
+on the order of the inputs.
+
+The --pipe parmeter of parallel allows passing arguments 
+from stdin (e.g. with a pipe). In that case, you need to
+specify the program to run after --pipe. You also have
+to use -N 1 to feed lines one per one to the program
+started with --pipe
+

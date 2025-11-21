@@ -10,3 +10,10 @@
 10_pipe
 11_split
 12_make
+13_gnuparallel
+14_pararllelcite
+15_firstuse
+16_combinations
+17_argsinfile
+18_manyfiles
+19_parallelpipe

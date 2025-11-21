@@ -1,0 +1,34 @@
+Mission goal
+============
+
+The `parallel` program can start the same command multiple
+times with different parameters. It is distributed with a
+GPL_v3 licence and is free to use, but the author requests
+that publications that used the software to produce the
+results cite the software in their references. 
+
+The programm will remind you this until you explicitly agree
+to cite it in future publications, at which point it will
+become completely silent on the matter.
+
+The goal of this mission is to find out the paper to cite 
+and agree to cite it in future publications.
+
+Useful commands
+===============
+
+parallel COMMAND ::: ARG1 ARG2 ... ARGN
+  this command will start N instances of COMMAND in parallel
+  and "distribute" ARG1 ARG2 ... ARGN to each instance. For 
+  instance parallel `echo ::: Hello Bonjour Holà` will run
+  `echo` three times, once with `Hello`, once with `Bonjour` and
+  a final time with `Holà`, all at the same time.
+
+Remarks
+-------
+
+As long as you did not accept to cite the above-mentioned paper
+the command will remind you of it and explain how to do to
+agree, and refer you to further documentation. As soon as
+you agree, the warning will disapear. This has to be done
+on each cluster individually.
