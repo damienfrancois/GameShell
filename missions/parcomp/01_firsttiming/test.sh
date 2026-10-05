@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+. alt_history_start.sh
+
+add_cmd 'cat d.txt'
+add_cmd gsh check
+gsh assert_check false
+
+add_cmd './lower.sh d.txt'
+add_cmd gsh check
+gsh assert_check true
+
+. alt_history_stop.sh

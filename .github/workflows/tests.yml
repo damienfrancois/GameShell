@@ -3,20 +3,93 @@ on: [push]
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
-        platform: [ubuntu-latest, macos-latest]
+        platform: [ubuntu-26.04, ubuntu-24.04, ubuntu-22.04, macos-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout the GameShell repo
-        uses: actions/checkout@v4
-      - if: ${{ matrix.platform == 'ubuntu-latest' }}
+        uses: actions/checkout@v5
+      - if: ${{ startsWith(matrix.platform, 'ubuntu') }}
         name: Install Linux deps
         run: |
-          sudo apt install gettext man-db psmisc nano tree bsdmainutils zsh
-      # - if: ${{ matrix.platform == 'macos-latest' }}
-      #   name: Install macOS deps
-      #   run: |
-      #     brew install coreutils pstree tree man-db
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends --assume-yes \
+            gettext man-db psmisc procps nano tree bsdmainutils zsh parallel
+      - if: ${{ matrix.platform == 'macos-latest' }}
+        name: Install macOS deps
+        run: |
+          brew install parallel coreutils
       - name: Run the tests
         run: |
             make tests-bash && make tests-zsh
+
+  test-debian:
+    # older Debian releases, run in containers since GitHub only provides
+    # Ubuntu / macOS / Windows runners
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Debian 12: still supported, uses the regular mirrors
+          - release: bookworm
+            archived: false
+            snapshot: ""
+          # Debian 11 ("bullseye", archived: true, snapshot:
+          # "20260801T000000Z") is tested on master but not here: its GNU
+          # parallel is 20161222, from 2016, and mission 13 does not accept
+          # it -- it reports it as not being GNU parallel at all, although it
+          # identifies itself correctly when run outside of GameShell.
+    runs-on: ubuntu-latest
+    container:
+      image: debian:${{ matrix.release }}
+      # Run a real init as PID 1 so that orphaned processes get reaped.  The
+      # default PID 1 of a job container is "tail -f /dev/null", which never
+      # calls wait(), so killed children of a killed process stay around as
+      # zombies -- and the "processes" missions, which look for their
+      # background process in the output of ps, then see it as still running.
+      options: --init
+    steps:
+      - name: Install Debian deps
+        run: |
+          if [ "${{ matrix.archived }}" = "true" ]
+          then
+            # This release has been removed from deb.debian.org.  Its main
+            # archive is on archive.debian.org, but the security suite is not
+            # there yet, and the Docker image ships packages from it: without
+            # it, apt cannot install any -dev package matching the already
+            # installed runtime one.  So take the security suite from
+            # snapshot.debian.org, pinned to a date so the job is reproducible.
+            rel="${{ matrix.release }}"
+            snap="${{ matrix.snapshot }}"
+            {
+              echo "deb http://archive.debian.org/debian $rel main"
+              echo "deb http://archive.debian.org/debian $rel-updates main"
+              echo "deb http://snapshot.debian.org/archive/debian-security/$snap $rel-security main"
+            } > /etc/apt/sources.list
+            # archived and snapshot Release files are expired by definition
+            echo 'Acquire::Check-Valid-Until "false";' \
+              > /etc/apt/apt.conf.d/99no-check-valid-until
+          fi
+          apt-get update
+          apt-get install --no-install-recommends --assume-yes \
+            ca-certificates git make locales \
+            gettext man-db psmisc procps nano tree bsdmainutils bsdextrautils zsh \
+            parallel gcc libc6-dev
+          # "parallel" is needed by the parcomp missions, and the compiler by
+          # the "processes" ones, which build a small C program
+          sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen
+          locale-gen
+          update-locale LANG=en_US.UTF-8
+      - name: Checkout the GameShell repo
+        uses: actions/checkout@v5
+      - name: Create an unprivileged user
+        # GameShell refuses to run as root, and containers run as root
+        run: |
+          useradd -m -s /bin/bash gsh-user
+          chown -R gsh-user:gsh-user "$GITHUB_WORKSPACE"
+      - name: Run the tests
+        env:
+          LANG: en_US.UTF-8
+        run: |
+          su gsh-user -c 'make tests-bash && make tests-zsh'

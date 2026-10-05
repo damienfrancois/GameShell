@@ -28,6 +28,13 @@ then
   AWK="gawk -f wcwidth.awk"
 else
   AWK="awk -f wcwidth.awk"
+  # wcwidth.awk recognises UTF-8 characters by matching their bytes, with
+  # regexps such as /[\302-\336][\200-\277]/.  An awk that decodes multibyte
+  # characters on its own chokes on them: macOS's awk aborts the line with
+  # "multibyte conversion failure" and the box comes out truncated.  Ask it
+  # for bytes, which is what the library expects.
+  LC_ALL=C
+  export LC_ALL
 fi
 
 # default temporary encoding: use an 8bit encoding if awk doesn't supports

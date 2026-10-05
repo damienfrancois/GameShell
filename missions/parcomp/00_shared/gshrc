@@ -1,0 +1,15 @@
+# zsh's "time" prints everything on one line; use the same
+# "real / user / sys" layout as bash, which is what the goals describe
+if [ -n "$ZSH_VERSION" ]
+then
+  TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
+fi
+
+# GameShell sets TMPDIR inside its own directory, but GNU parallel refuses to
+# run when TMPDIR contains characters outside [-a-z0-9_+,.%:/= ], which
+# happens when GameShell is installed in a directory like "gameshell (1)"
+case "$TMPDIR" in
+  *[!-a-zA-Z0-9_+,.%:/=\ ]*)
+    export TMPDIR=/tmp
+    ;;
+esac

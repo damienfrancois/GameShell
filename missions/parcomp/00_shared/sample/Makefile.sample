@@ -1,0 +1,14 @@
+# Sample Makefile to process each file with 
+# lower.sh then upper.sh
+#
+all: d1.res d2.res d3.res d4.res
+
+# Build intermediary files
+%.tmp: %.txt lower.sh
+	./lower.sh $< $@
+
+
+# Build final result
+%.res: %.tmp upper.sh
+	./upper.sh $< $@
+

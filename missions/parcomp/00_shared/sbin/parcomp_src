@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+
+# print the directory holding the pristine parcomp sample (scripts + data)
+# used to create and repair the player's working copy "$GSH_HOME/parcomp".
+#
+# lookup order:
+#   1. $GSH_PARCOMP_SRC, if set (explicit override)
+#   2. /CECI/proj/training/parcomp (CECI clusters)
+#   3. $GSH_HOME/training/parcomp, copied on the fly from the "sample"
+#      directory shipped with the missions (laptops)
+parcomp_src() {
+  if [ -n "$GSH_PARCOMP_SRC" ] && [ -d "$GSH_PARCOMP_SRC" ]
+  then
+    echo "$GSH_PARCOMP_SRC"
+    return 0
+  fi
+
+  if [ -d /CECI/proj/training/parcomp ]
+  then
+    echo /CECI/proj/training/parcomp
+    return 0
+  fi
+
+  local_src=$GSH_HOME/training/parcomp
+  if ! [ -f "$local_src/lower.sh" ]
+  then
+    mkdir -p "$local_src" || return 1
+    cp -Rp "$MISSION_DIR/sample/." "$local_src/" || return 1
+    # the archive build (utils/archive.sh) removes all files named "Makefile"
+    mv "$local_src/Makefile.sample" "$local_src/Makefile" || return 1
+  fi
+  echo "$local_src"
+}
+
+parcomp_src "$@"

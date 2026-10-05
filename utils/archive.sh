@@ -334,7 +334,9 @@ fi
 
 # create archive
 echo "creating archive"
-tar -zcf "$OUTPUT_DIR/$NAME.tgz" -C "$TMP_DIR" "$NAME"
+# see the comment in scripts/_gsh_save: keep macOS's extra metadata out of
+# the archive, so that one built on a Mac matches one built on Linux
+COPYFILE_DISABLE=1 tar -zcf "$OUTPUT_DIR/$NAME.tgz" -C "$TMP_DIR" "$NAME"
 
 # create self-extracting archive
 echo "creating self-extracting archive"

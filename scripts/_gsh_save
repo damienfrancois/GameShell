@@ -41,6 +41,14 @@ fi
 GSH_LAST_CHECKED_MISSION=$(_gsh_plm)
 sed-i "s/^GSH_LAST_CHECKED_MISSION=.*/GSH_LAST_CHECKED_MISSION=$GSH_LAST_CHECKED_MISSION/" "$GSH_ROOT/lib/header.sh"
 
+# COPYFILE_DISABLE stops macOS's tar from storing the resource forks and
+# extended attributes of the files it archives.  Without it, saving after a
+# mission that creates a FIFO prints
+#   tar: Could not pack extended attributes: Operation not supported
+# because macOS has no extended attributes to give for a FIFO.  It also keeps
+# the "._" files macOS would otherwise add out of the save.  GNU tar ignores
+# the variable.
+COPYFILE_DISABLE=1 \
 tar --exclude="$SAVEFILE.tgz" -zcf "$SAVEFILE.tgz" -C "$(dirname "$GSH_ROOT")" "$(basename "$GSH_ROOT")"
 ARCHIVE_OK=$?
 

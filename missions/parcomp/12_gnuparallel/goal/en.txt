@@ -1,0 +1,37 @@
+Mission goal
+============
+
+This time, we will look at a command which is not part of the set
+of basic Linux commands: GNU Parallel. The goal of this mission is
+to make the `parallel` program available in the command line.
+
+Check whether it is already installed with `parallel --version`.
+If it is not, install it with the package manager of your computer:
+
+    brew install parallel            (macOS, with Homebrew)
+    sudo apt install parallel        (Debian / Ubuntu)
+
+When `parallel --version` works, run `gsh check`.
+
+Useful commands
+===============
+
+parallel --version
+  shows the version of GNU parallel, if it is installed
+
+command -v PROGRAM
+  shows where PROGRAM is found, if it can be found at all
+
+Remarks
+-------
+
+Beware that the `moreutils` package provides an unrelated command
+also named `parallel`. If `parallel --version` does not say
+"GNU parallel", uninstall `moreutils` (or remove its `parallel`)
+before installing GNU parallel.
+
+On the CECI clusters, GNU parallel is not installed system-wide but
+available as an environment module: find it with
+`module spider parallel` and load it with `module load`. The module
+might not be in the default release, so make sure to load the correct
+release first.

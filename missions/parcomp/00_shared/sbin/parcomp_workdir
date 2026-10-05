@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+# make sure the player's working copy "$GSH_HOME/parcomp" exists and holds a
+# pristine copy of every file of the sample.  This runs at the start of every
+# mission, so nobody has to copy anything by hand, and a mission always starts
+# from the same data whatever the previous one -- or the player -- did to it.
+parcomp_workdir() {
+  src=$(parcomp_src) || return 1
+  dst=$GSH_HOME/parcomp
+
+  mkdir -p "$dst" || return 1
+  for file in "$src"/* "$src"/.[!.]*
+  do
+    [ -e "$file" ] || continue
+    # overwrite: these are the mission's data, not the player's work.  What
+    # the player produces -- res.txt, the .tmp, .res and backup files -- has
+    # no counterpart in the sample and is therefore left alone.
+    cp -Rp "$file" "$dst/" || return 1
+  done
+}
+
+parcomp_workdir "$@"
